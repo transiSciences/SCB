@@ -1,6 +1,9 @@
+# IMPORTANT !
+Le code est entrain de subir une refonte pour la version 2.0, il se peut que vous trouviez beaucoup d'erreurs !
+
 # SCB
 
-SCB ou Secure.Containment.Bot est le bot privé du serveur RP Site-51, vu qu'il est privé, vous ne pouvez pas juste copier-coller le code, il y aura beaucoup d'erreurs, si vous voulez l'utilisez, il faut savoir coder !
+SCB ou Secure.Containment.Bot est le bot privé du serveur RP Reborn, vu qu'il est privé, vous ne pouvez pas juste copier-coller le code, il y aura beaucoup d'erreurs, si vous voulez l'utilisez, il faut savoir coder !
 
 # Features
 
