@@ -434,5 +434,5 @@ Client.on('message', message => {
 
 //#region------------------Client LOGIN-----------------\\
 
-Client.login(config.token)
+Client.login(settings.TOKEN)
 //#endregion
