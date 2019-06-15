@@ -8,19 +8,7 @@ const settings = require("./settings.json")
 //#region------------------INITIALISATION DES HANDLERS------------------\\
 
 require("./launcher/eventLauncher.js")(Client);
-//#endregion
-
-//#region------------------COMMANDES INUTILES------------------\\
-
-Client.on('message', message => {
-   if (message.content === prefix + 'ping') {
-   message.channel.send("Pong ! `" + Client.ping + "ms`")
-   .catch((err) => {
-   console.error(err)})
-  }
-})
-//Commande ?ping
-
+require("./launcher/commandLauncher.js")(Client);
 //#endregion
 
 //#region------------------RÉACTIONS ET MESSAGES AUTOMATIQUES------------------\\

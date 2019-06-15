@@ -27,7 +27,7 @@ module.exports = Client => {
     const command = args.shift().toLowerCase().replace(settings.prefix, "");
 
     try {
-      reqCommand(command).run(Client, message, args);
+      if(reqCommand(command).conf.enable) reqCommand(command).run(Client, message, args);
     } catch (err) {}
   })
 }
