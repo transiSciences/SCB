@@ -5,13 +5,9 @@ const Client = new Discord.Client()
 const settings = require("./settings.json")
 //#endregion
 
-//#region------------------LANCEMENT DU Client------------------\\
+//#region------------------INITIALISATION DES HANDLERS------------------\\
 
-Client.on('ready', function () {
- Client.channels.get('442729462828892190').send("Je suis connecté.");
-  Client.user.setActivity("?help pour les commandes !");
-})
-
+require("./eventLauncher/eventLauncher.js")(Client);
 //#endregion
 
 //#region------------------COMMANDES INUTILES------------------\\
