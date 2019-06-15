@@ -5,8 +5,9 @@ const Client = new Discord.Client()
 const settings = require("./settings.json")
 //#endregion
 
-//#region------------------INITIALISATION DES HANDLERS------------------\\
+//#region------------------INITIALISATION DES HANDLERS ET SETUP LIMITTER------------------\\
 
+require('events').EventEmitter.prototype._maxListeners = 100;
 require("./launcher/eventLauncher.js")(Client);
 require("./launcher/commandLauncher.js")(Client);
 //#endregion
