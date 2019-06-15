@@ -5,6 +5,9 @@ Le code est entrain de subir une refonte pour la version 2.0, il se peut que vou
 
 SCB ou Secure.Containment.Bot est le bot privé du serveur RP Reborn, vu qu'il est privé, vous ne pouvez pas juste copier-coller le code, il y aura beaucoup d'erreurs, si vous voulez l'utilisez, il faut savoir coder !
 
+# Project log
+Pour avoir accès au project log, allez voir sur le Trello associé (demander à transiSciences)
+
 # Features
 
 SCB propose des commandes pour RP, des interactions entre les joueurs (dont quelques NSFW), des Tests-RP, des commandes Admin, et surtout un système de log.
