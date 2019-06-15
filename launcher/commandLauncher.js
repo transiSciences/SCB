@@ -27,7 +27,22 @@ module.exports = Client => {
     const command = args.shift().toLowerCase().replace(settings.prefix, "");
 
     try {
-      if(reqCommand(command).conf.enable) reqCommand(command).run(Client, message, args);
+      switch (getPerm(message)) {
+        case 4:
+          reqCommand(command).run(Client, message, args);
+          break;
+
+        default:
+          if(reqCommand(command).conf.enable && reqCommand(command).conf.permLevel <= getPerm(message)) reqCommand(command).run(Client, message, args);
+      }
     } catch (err) {}
   })
+
+  function getPerm(message) {
+    if(message.author.id === settings.OWNERID[0] || message.author.id === settings.OWNERID[1]) return 4;
+    //if(message.author.id === settings.DEVID[0]) return 3;
+    else if(message.guild.member(message.author).hasPermission("MANAGE_GUILD")) return 2;
+    else if(message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return 1;
+    else return 0;
+  }
 }
