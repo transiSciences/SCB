@@ -7,7 +7,7 @@ const settings = require("./settings.json")
 
 //#region------------------INITIALISATION DES HANDLERS------------------\\
 
-require("./eventLauncher/eventLauncher.js")(Client);
+require("./launcher/eventLauncher.js")(Client);
 //#endregion
 
 //#region------------------COMMANDES INUTILES------------------\\
