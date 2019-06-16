@@ -9,10 +9,12 @@
   "author": "Asviix",
   "license": "MIT",
   "dependencies": {
+    "btoa": "^1.2.1",
     "chalk": "^2.4.2",
     "discord.js": "^11.3.2",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "node-fetch": "^2.6.0"
   }
 }
