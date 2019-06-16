@@ -1,6 +1,6 @@
 //#region------------------CONSTANTES DU Client------------------\\
 
-const Discord = require('discord.js')
+const Discord = require('Discord.js')
 const Client = new Discord.Client()
 const settings = require("./settings.json")
 //#endregion
@@ -121,7 +121,7 @@ Client.on('message', message => {
                     .setTitle(`Comment marche ${Client.user.username} ?`)
                     .setThumbnail(`${Client.user.avatarURL}`)
                     .addBlankField(true)
-                    .addField("Le Codage :", "**SCP-FR Client** est codé sous Java avec Node.js et discord.js.")
+                    .addField("Le Codage :", "**SCP-FR Client** est codé sous Java avec Node.js et Discord.js.")
                     .addBlankField(true)
                     .addField("L'Hébergement :","Je suis hébergé sur le Raspberry Pi personnel de Asviix, je tourne donc 24/7.")
                     .setFooter(Client.user.username)
@@ -140,7 +140,7 @@ Client.on('message', message => {
                     .addBlankField(true)
                     .addField("Présentation :", "Bienvenue à toi sur le " + message.guild.name + "! Des explications sont disponibles dans les 4 premiers channels de la catégorie \"Règles/Annonces\" !\nSi tu as la moindre question n'hésite pas à demander à un développeur connecté !")
                     .addBlankField(true)
-                    .addField("Le Fonctionnement","Serveur Discord : Le RP du discord marche avec des tests qu'il faudra passer pour avoir les jobs en questions, je t'invite à aller dans <#427871700651081740> pour plus d'explications :wink:.\nServeur Gmod : Le Serveur Gmod marche de la même manière, mais il faudra directement demander au staff pour passer les tests.")
+                    .addField("Le Fonctionnement","Serveur Discord : Le RP du Discord marche avec des tests qu'il faudra passer pour avoir les jobs en questions, je t'invite à aller dans <#427871700651081740> pour plus d'explications :wink:.\nServeur Gmod : Le Serveur Gmod marche de la même manière, mais il faudra directement demander au staff pour passer les tests.")
                     .setFooter(Client.user.username)
                     .setTimestamp()
              message.channel.send(explications_embed)
