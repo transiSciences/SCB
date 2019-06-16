@@ -1,6 +1,6 @@
 const chalk = require("chalk");
 const moment = require("moment");
-const settings = require("../settings.json");
+const settings = require("../assets/settings.json");
 
 const log = message => {
     console.log(`[${moment().format('DD-MM-YYYY HH:mm:ss')}] ${message}`);

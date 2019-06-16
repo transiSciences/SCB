@@ -1,5 +1,5 @@
 const reqCommand = (command) => require(`../commands/${command}.js`);
-const settings = require('../settings.json');
+const settings = require('../assets/settings.json');
 const fs = require("fs");
 const chalk = require("chalk");
 
