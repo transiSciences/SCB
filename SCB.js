@@ -4,21 +4,28 @@ const Discord = require('Discord.js');
 const Client = new Discord.Client();
 const settings = require("./assets/settings.json");
 const config = require("./assets/config.json");
+const chalk = require('chalk');
+const fs = require('fs');
 const mysql = require('mysql');
 const date = require('s-date');
+
+const log = message => {
+    console.log(`[${date(`{dd}/{mm}/{yyyy} {h24}:{Minutes}:{Seconds}`, new Date())}] ${message}`);
+};
 //#endregion
 
 //------------------CONFIGURATION SQL------------------\\
 
 let connexion = mysql.createConnection({
   host: "localhost",
-  user: "phpmyadmin",
-  password: "config.mysql_PASS",
+  user: "SCB",
+  password: config.mysql_PASS,
   database: "scb_db"
 });
 
 connexion.connect((err) => {
   if(err) throw err;
+  log(chalk.yellow("MySQL client connected"));
 
 });
 //#endregion
@@ -26,8 +33,8 @@ connexion.connect((err) => {
 //#region------------------INITIALISATION DES HANDLERS ET SETUP LIMITTER------------------\\
 
 require('events').EventEmitter.prototype._maxListeners = 100;
-require("./launcher/eventLauncher.js")(Client);
-require("./launcher/commandLauncher.js")(Client);
+require("./launcher/eventLauncher.js")(Client, connexion, date, settings, chalk, log);
+require("./launcher/commandLauncher.js")(Client, connexion, Discord, settings, config, chalk, log, fs);
 //#endregion
 
 //#region------------------RÉACTIONS ET MESSAGES AUTOMATIQUES------------------\\
