@@ -1,8 +1,9 @@
 //#region------------------CONSTANTES DU Client------------------\\
 
-const Discord = require('Discord.js')
-const Client = new Discord.Client()
-const settings = require("./settings.json")
+const Discord = require('Discord.js');
+const Client = new Discord.Client();
+const settings = require("./assets/settings.json");
+const config = require("./assets/config.json");
 //#endregion
 
 //#region------------------INITIALISATION DES HANDLERS ET SETUP LIMITTER------------------\\
@@ -423,5 +424,5 @@ Client.on('message', message => {
 
 //#region------------------Client LOGIN-----------------\\
 
-Client.login(settings.TOKEN)
+Client.login(config.TOKEN);
 //#endregion
