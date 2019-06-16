@@ -4,6 +4,23 @@ const Discord = require('Discord.js');
 const Client = new Discord.Client();
 const settings = require("./assets/settings.json");
 const config = require("./assets/config.json");
+const mysql = require('mysql');
+const date = require('s-date');
+//#endregion
+
+//------------------CONFIGURATION SQL------------------\\
+
+let connexion = mysql.createConnection({
+  host: "localhost",
+  user: "phpmyadmin",
+  password: "config.mysql_PASS",
+  database: "scb_db"
+});
+
+connexion.connect((err) => {
+  if(err) throw err;
+
+});
 //#endregion
 
 //#region------------------INITIALISATION DES HANDLERS ET SETUP LIMITTER------------------\\

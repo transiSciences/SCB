@@ -2,9 +2,10 @@ const reqCommand = (command) => require(`../commands/${command}.js`);
 const settings = require('../assets/settings.json');
 const fs = require("fs");
 const chalk = require("chalk");
+const date = require('s-date');
 
 const log = message => {
-    console.log(`[${moment().format('DD-MM-YYYY HH:mm:ss')}] ${message}`);
+    console.log(`[${date(`{dd/mm/yyyy h24:Minutes:Secondes}`, new Date());}] ${message}`);
 };
 
 module.exports = Client => {
