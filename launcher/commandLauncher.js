@@ -1,13 +1,15 @@
 const reqCommand = (command) => require(`../commands/${command}.js`);
+const fs = require('fs');
+const chalk = require('chalk');
 
-module.exports = (Client, connexion, Discord, settings, config, chalk, log, fs) => {
+module.exports = (Client, connexion, Discord, log) => {
   fs.readdir("../commands/", (err, files) => {
-    if(err) return console.error(err);
+    if(err) throw err;
 
-    log(chalk.blue(`Chargement de ${files.length} commandes.`));
+    log(chalk.blue(`Loading a total of ${files.length} commands.`));
     files.forEach(f => {
         const props = require(`../commands/${f}`);
-        log(chalk.green(`Loading command ${props.conf.name}.`));
+        log(chalk.green(`Loading command ${props.help.name} (v${props.help.version}).`));
     });
   })
 
@@ -22,7 +24,7 @@ module.exports = (Client, connexion, Discord, settings, config, chalk, log, fs) 
     try {
       switch (getPerm(message)) {
         case 4:
-          reqCommand(command).run(Client, message, args, connexion, Discord, settings, config, chalk, log, fs);
+          reqCommand(command).run(Client, message, args, connexion, Discord, log);
           break;
 
         default:

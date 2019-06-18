@@ -6,9 +6,9 @@ const log = message => {
 };
 
 module.exports = (Client, connexion) => {
-  function arrayRemove(array, value) {
+  function arrayHas(array, value) {
     return array.filter(element => {
-      return element != value;
+      return element === value;
     })
   };
 
@@ -16,7 +16,10 @@ module.exports = (Client, connexion) => {
 
    connexion.query("SELECT `userid` FROM `users`;", (err, result) => {
      let targetToBotUsers = Array();
-     Client.users.forEach(user => targetToBotUsers.push(user.id));
+     Client.users.forEach(user => {
+      if(!user.bot)
+      targetToBotUsers.push(user.id);
+     });
      log(chalk.blue(`${targetToBotUsers.length} users found`));
      if (err) throw err;
 
@@ -36,13 +39,14 @@ module.exports = (Client, connexion) => {
      else if(targetToBotUsers.length < targetToDbUsers.length) {
        log(chalk.blue("Some users who aren't on the bot anymore has been found, removing..."));
        for (i = 0; i < targetToDbUsers.length; i++) {
-         connexion.query("DELETE FROM `users` WHERE `userid` = '" + targetToDbUsers[i] + "'; ", (err, result));
+         if (!arrayHas(targetToBotUsers, targetToDbUsers[i])) connexion.query("DELETE FROM `users` WHERE `userid` = '" + targetToDbUsers[i] + "'; ", (err, result));
        }
 
        log(chalk.yellow(`${targetToDbUsers.length} users removed from database`));
        connexion.query("SELECT `userid` FROM `users`;", (err, result) => {log(chalk.blue(`${targetToDbUsers.length} stored users found in database`))});
        return;
      }
+
      for (i = 0; i < targetToDbUsers.length; i++) {
        targetToUsersAdd = arrayRemove(targetToUsersAdd, targetToDbUsers[i]);
      }
