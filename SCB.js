@@ -42,30 +42,6 @@ require("./launcher/commandLauncher.js")(Client, connexion, Discord, settings, c
 Client.on('message', message => {
   const args = message.content.trim().split(/ +/g)
   const command = args.shift().toLowerCase()
-   if (command === 'kappa') { message.react(':Kappa:432470712410701824');message.channel.send('<:LeKappa:432470712410701824>')}
-}) //Commandes Réactions et Réponses automatiques
-
-Client.on('message', message => {
-  const args = message.content.trim().split(/ +/g)
-  const command = args.shift().toLowerCase()
-   if (command === 'hehe') { message.react(':Ainsley:434652828573892610')}
-   if (command === 'idc') { message.react(':IDC:431121882461372438')}
-   if (command === 'scp-682') { message.react(':SCP682:431142635382505473')}
-   if (command === '682') { message.react(':SCP682:431142635382505473')}
-   if (command === 'classe-d') { message.react(':ClasseD:431130683906326547')}
-   if (command === 'scp-096') { message.react(':SCP096:431129031098892289')}
-   if (command === '096') { message.react(':SCP096:431129031098892289')}
-   if (command === 'safe') { message.react(':Safe:427881795724509184')}
-   if (command === 'euclid') { message.react(':Euclid:427881795325919243')}
-   if (command === 'keter') { message.react(':Keter:427881795275718657')}
-   if (command === 'xk') { message.react(':XK:427881795686760458')}
-
-})
-//Commandes Réactions automatiques
-
-Client.on('message', message => {
-  const args = message.content.trim().split(/ +/g)
-  const command = args.shift().toLowerCase()
    if (command === 'skyrim') { message.channel.send('I used to be an adventurer like you, then I took an arrow in the knee')}
    if (command === 'dukenukem') { message.channel.send('I am here to kickass and chew bubblegum... And I\'m all out of bubble-gum.')}
    if (command === 'dukenukem2') {message.channel.send("Mes couilles sur ton nez, t'auras l’air d'un dindon")}
