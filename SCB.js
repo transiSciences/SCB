@@ -33,27 +33,11 @@ connexion.connect((err) => {
 //#region------------------INITIALISATION DES HANDLERS ET SETUP LIMITTER------------------\\
 
 require('events').EventEmitter.prototype._maxListeners = 100;
-require("./launcher/eventLauncher.js")(Client, connexion, date, settings, chalk, log);
-require("./launcher/commandLauncher.js")(Client, connexion, Discord, settings, config, chalk, log, fs);
+require("./launcher/eventLauncher.js")(Client, connexion, date, log);
+require("./launcher/commandLauncher.js")(Client, connexion, Discord, settings, config, log);
 //#endregion
 
 //#region------------------RÉACTIONS ET MESSAGES AUTOMATIQUES------------------\\
-
-Client.on('message', message => {
-   if (message.content === prefix + 'liste') {
-   var liste_embed = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setTitle(`Commandes de Réactions et Réponses automatique.`)
-    .setThumbnail(`${Client.user.avatarURL}`)
-    .addBlankField(true)
-    .addField("Réactions automatiques :",'- Kappa\n- Hehe\n- IDC\n- SCP-682 (ou "682")\n- Classe-D\n- SCP-096 (ou "096")\n- Safe\n- Euclid\n- Keter\n- XK ')
-    .addBlankField(true)
-    .addField("Réponses automatiques :","- Skyrim\n- DukeNukem\n- DukeNukem2\n- G-Man\n- Price\n- Halo\n- AlanWake\n- MortalKombat\n- Chapelière\n- Vaas")
-    .setTimestamp()
-    message.channel.send(liste_embed)
-  }
-})
-//Commande ?liste
 
 Client.on('message', message => {
   const args = message.content.trim().split(/ +/g)
