@@ -40,25 +40,6 @@ require("./launcher/commandLauncher.js")(Client, connexion, Discord, settings, c
 //#region------------------COMMANDES DIVERSES------------------\\
 
 Client.on('message', message => {
- if (message.content === prefix + 'credit') {
- var credits_embed = new Discord.RichEmbed()
-                    .setColor('RANDOM')
-                    .setTitle(`Les développeurs du ${Client.user.username}`)
-                    .setThumbnail(`${Client.user.avatarURL}`)
-                    .addBlankField(true)
-                    .addField("Les développeurs :","Asviix : Codeur et manager du Client.\n\ntransiSciences : Codeur et Béta-Testeur.\n\nValen : Béta-Testeur.")
-                    .addBlankField(true)
-                    .addField("Version :","Le Client est actuellement en version " + config.version + ".")
-                    .addBlankField(true)
-                    .addField("Mentions légales :","Tout droits réservés à Asviix#1934, toute réutilisation de ce Client est interdite.\nSCP-FR Client est sous liscence MIT.")
-                    .setFooter(Client.user.username)
-                    .setTimestamp()
-             message.channel.send(credits_embed)
- }
-})
-//Commande ?credit
-
-Client.on('message', message => {
  if (message.content === prefix + 'changelog') {
  var changelog_embed = new Discord.RichEmbed()
                     .setColor('RANDOM')
