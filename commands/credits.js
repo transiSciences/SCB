@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const settings = require('../settings.json');
+const settings = require('../assets/settings.json');
 
 exports.run = (Client, message, args) => {
   var credits_embed = new Discord.RichEmbed()
@@ -14,7 +14,7 @@ exports.run = (Client, message, args) => {
       .addField("L'hébergement", `**${Client.user.username}** est hébergé sur Raspberry Pi Modèle 3b.`)
       .addBlankField(true)
       .addField('Mentions légales', `Tous droits réservés à transiSciences#6105 et Asviix#1934. Toute reproduction ou copie de ce bot est interdite.\n\n**${Client.user.username}** est sous licence MIT`)
-      .setFooter(`Requested by ${message.author.tag} | BOT - CodeUs ©`, message.author.avatarURL)
+      .setFooter(`Requested by ${message.author.tag} | BOT - SCB ©`, message.author.avatarURL)
       .setTimestamp()
   message.channel.send(credits_embed);
 }
