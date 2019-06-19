@@ -35,6 +35,7 @@ connexion.connect((err) => {
 require('events').EventEmitter.prototype._maxListeners = 100;
 require("./launcher/eventLauncher.js")(Client, connexion, date, log);
 require("./launcher/commandLauncher.js")(Client, connexion, Discord, settings, config, log);
+require("./launcher/autoreactListener.js")(Client, log);
 //#endregion
 
 //#region------------------COMMANDES DIVERSES------------------\\

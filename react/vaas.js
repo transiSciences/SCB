@@ -1,4 +1,4 @@
-exports.run = {
+exports.run = (Client, message) => {
   message.channel.send("Est-ce que je t'ai déjà donné la définition... du mot Folie ?");
 }
 

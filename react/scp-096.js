@@ -1,4 +1,4 @@
-exports.run = {
+exports.run = (Client, message) => {
   message.react(':SCP096:431129031098892289');
 }
 

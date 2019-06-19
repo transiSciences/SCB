@@ -1,15 +1,15 @@
-const reqReact = (react) => require(`../reactions/${react}.js`);
+const reqReact = (react) => require(`../react/${react}.js`);
 const fs = require('fs');
 const chalk = require('chalk');
 
 module.exports = (Client, log) => {
-  fs.readdir('../reactions', (err, files) => {
+  fs.readdir('./react', (err, files) => {
     if (err) throw err;
 
     log(chalk.blue(`Loading a total of ${files.length} reactions`));
     files.forEach(f => {
-      const props = require(`../commands/${f}`);
-      log(chalk.green(`Loading command ${props.help.name} (v${props.help.version}).`));
+      const props = require(`../react/${f}`);
+      log(chalk.green(`Loading reaction ${props.help.name} (v${props.help.version}).`));
     })
   })
 

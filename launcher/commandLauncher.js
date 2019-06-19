@@ -1,9 +1,14 @@
 const reqCommand = (command) => require(`../commands/${command}.js`);
 const fs = require('fs');
 const chalk = require('chalk');
+const date = require('s-date');
+const settings = require('../assets/settings.json');
+const log = (message) => {
+  console.log(`[${date(`{dd}/{mm}/{yyyy} {h24}:{Minutes}:{Seconds}`, new Date())}] ${message}`);
+}
 
-module.exports = (Client, connexion, Discord, log) => {
-  fs.readdir("../commands/", (err, files) => {
+module.exports = (Client, connexion, Discord) => {
+  fs.readdir("./commands/", (err, files) => {
     if(err) throw err;
 
     log(chalk.blue(`Loading a total of ${files.length} commands.`));
@@ -24,7 +29,7 @@ module.exports = (Client, connexion, Discord, log) => {
     try {
       switch (getPerm(message)) {
         case 4:
-          reqCommand(command).run(Client, message, args, connexion, Discord, log);
+          reqCommand(command).run(Client, message, args, connexion, Discord);
           break;
 
         default:

@@ -1,4 +1,4 @@
-exports.run = {
+exports.run = (Client, message) => {
   message.react(':IDC:431121882461372438');
 }
 

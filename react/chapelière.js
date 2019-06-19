@@ -1,4 +1,4 @@
-exports.run = {
+exports.run = (Client, message) => {
    message.channel.send('C\'est **ELLE**, Paysan !');
 }
 

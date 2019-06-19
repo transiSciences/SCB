@@ -1,4 +1,4 @@
-exports.run = {
+exports.run = (Client, message) => {
   message.react(':Keter:427881795275718657');
 }
 

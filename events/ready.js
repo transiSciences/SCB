@@ -57,7 +57,8 @@ module.exports = (Client, connexion) => {
 
      log(chalk.yellow(`${targetToUsersAdd.length} users added to database`));
      connexion.query("SELECT `userid` FROM `users` WHERE 1;", (err, result) => {log(chalk.blue(`${targetToDbUsers.length} stored users found in database`))})
-     log(chalk.blue(`Logged in as: ${Client.user.tag} ${settings.version} ${settings.lang}`))
-     Client.user.setActivity("?help pour les commandes !", {type: "WATCHING"});
    });
+
+   log(chalk.blue(`Logged in as: ${Client.user.tag} ${settings.version} ${settings.lang}`))
+   Client.user.setActivity("?help pour les commandes !", {type: "WATCHING"});
 }

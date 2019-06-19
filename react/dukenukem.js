@@ -1,4 +1,4 @@
-exports.run = {
+exports.run = (Client, message) => {
   message.channel.send("Mes couilles sur ton nez, t'auras l’air d'un dindon");
 }
 

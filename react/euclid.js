@@ -1,4 +1,4 @@
-exports.run = {
+exports.run = (Client, message) => {
    message.react(':Euclid:427881795325919243');
 }
 

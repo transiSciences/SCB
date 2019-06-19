@@ -1,4 +1,4 @@
-exports.run = {
+exports.run = (Client, message) => {
   message.channel.send('I am here to kickass and chew bubblegum... And I\'m all out of bubble-gum.');
 }
 

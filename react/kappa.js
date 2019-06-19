@@ -1,4 +1,4 @@
-exports.run = {
+exports.run = (Client, message) => {
   message.react(':Kappa:432470712410701824');
   message.channel.send('<:LeKappa:432470712410701824>');
 }
