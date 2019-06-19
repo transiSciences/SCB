@@ -19,7 +19,7 @@ module.exports = (Client, connexion, Discord) => {
   })
 
   Client.on("message", message => {
-    if(message.author === Client.user) return;
+    if(message.author.bot) return;
     if(message.channel.type === "dm" || message.channel.type === "group") return;
     if(!message.content.indexOf(settings.prefix) === 0) return;
 

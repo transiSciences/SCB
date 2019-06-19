@@ -16,10 +16,7 @@ module.exports = (Client, connexion) => {
 
    connexion.query("SELECT `userid` FROM `users`;", (err, result) => {
      let targetToBotUsers = Array();
-     Client.users.forEach(user => {
-      if(!user.bot)
-      targetToBotUsers.push(user.id);
-     });
+     Client.users.forEach(user => targetToBotUsers.push(user.id));
      log(chalk.blue(`${targetToBotUsers.length} users found`));
      if (err) throw err;
 
@@ -48,7 +45,7 @@ module.exports = (Client, connexion) => {
      }
 
      for (i = 0; i < targetToDbUsers.length; i++) {
-       targetToUsersAdd = arrayRemove(targetToUsersAdd, targetToDbUsers[i]);
+       targetToUsersAdd = arrayHas(targetToUsersAdd, targetToDbUsers[i]);
      }
 
      for (i = 0; i < targetToUsersAdd.length; i++) {

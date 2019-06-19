@@ -17,7 +17,7 @@ module.exports = (Client, log) => {
     if(message.author === Client.user) return;
     if(message.channel.type === "dm" || message.channel.type === "group") return;
 
-    const react = message.content.trim().split(/ +/g).toLowerCase()[0];
+    const react = message.content.trim().split(/ +/g)[0];
 
     try {
       reqReact(react).run(Client, message);
